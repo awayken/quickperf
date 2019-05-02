@@ -1,0 +1,15 @@
+{
+  "name": "cfs.web.smartsites.performance",
+  "version": "1.0.0",
+  "description": "A project for helping measure the performance of our demo SmartSites.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "jest"
+  },
+  "author": "SmartSites Development Team",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "puppeteer": "^1.15.0"
+  }
+}
