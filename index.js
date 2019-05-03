@@ -5,6 +5,8 @@ const fs = require('fs');
 const demoSites = require('./demo-sites.json');
 const config = require('./custom-config.js');
 
+const updateResults = Boolean(process.argv[2]);
+
 (async () => {
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
@@ -25,15 +27,21 @@ function getSafeName(input) {
 }
 
 async function verify(page, pageName) {
-    await page.screenshot({ path: `./results/${pageName}.png` });
+    if (updateResults) {
+        await page.screenshot({ path: `./results/${pageName}.png` });
+    }
 
+    let historicalMetrics;
+    const metricsFilename = `./results/${pageName}.json`;
     const metrics = await gatherLighthouseMetrics(page, config);
 
-    fs.writeFileSync(`./results/${pageName}.json`, JSON.stringify(metrics, null, 2));
+    if (updateResults) {
+        fs.writeFileSync(metricsFilename, JSON.stringify(metrics, null, 2));
+    } else {
+        historicalMetrics = JSON.parse(fs.readFileSync(metricsFilename))
+    }
 
-    outputMetrics(metrics);
-
-    return metrics;
+    outputMetrics(metrics, historicalMetrics);
 }
 
 async function gatherLighthouseMetrics(page, config) {
@@ -47,22 +55,38 @@ async function gatherLighthouseMetrics(page, config) {
     });
 }
 
-function outputMetrics(metrics) {
+function outputMetrics(metrics, historicalMetrics) {
     console.log(metrics.lhr.finalUrl);
     console.log('');
 
-    const performance = metrics.lhr.categories.performance;
-    console.log(`${outputScore(performance.score)} ${performance.title}: ${performance.score * 100}`)
+    outputPerformance(metrics);
+
+    let historicalSuffix;
+    if (historicalMetrics) {
+        historicalSuffix = ` (${historicalMetrics.lhr.fetchTime})`;
+        outputPerformance(historicalMetrics, historicalSuffix);
+    }
+
     console.log('');
 
     for (const auditKey of Object.keys(metrics.lhr.audits)) {
         const audit = metrics.lhr.audits[auditKey];
+        const historicalAudit = historicalMetrics && historicalMetrics.lhr.audits[auditKey];
 
         console.log(`${outputScore(audit.score)} ${audit.title}: ${audit.displayValue}`);
+        if (historicalAudit) {
+            console.log(`${outputScore(historicalAudit.score)} ${historicalAudit.title}: ${historicalAudit.displayValue}${historicalSuffix}`);
+        }
     }
 
     console.log('-'.repeat(80));
     console.log('');
+}
+
+function outputPerformance(metrics, logSuffix = '') {
+    const performance = metrics.lhr.categories.performance;
+
+    console.log(`${outputScore(performance.score)} ${performance.title}: ${performance.score * 100}${logSuffix}`)
 }
 
 function outputScore(score) {
