@@ -1,33 +1,19 @@
 const puppeteer = require('puppeteer');
 const lighthouse = require('lighthouse');
+const ora = require('ora');
 const fs = require('fs');
 
 const demoSites = require('./demo-sites.json');
 const config = require('./custom-config.js');
 
-const updateResults = Boolean(process.argv[2]);
-
-(async () => {
-    const browser = await puppeteer.launch({ headless: true });
-    const page = await browser.newPage();
-
-    for (const site of demoSites.sites) {
-        await page.goto(site);
-        await verify(page, `${getSafeName(site)}_home`);
-
-        await page.goto(`${site}cars-for-sale`);
-        await verify(page, `${getSafeName(site)}_inventory`);
-    }
-
-    await browser.close();
-})();
+const resultsShouldBeUpdated = Boolean(process.argv[2]);
 
 function getSafeName(input) {
     return input.split('www.')[1].replace(/[^\w]/g, '_');
 }
 
-async function verify(page, pageName) {
-    if (updateResults) {
+async function checkPage(page, pageName, spinner) {
+    if (resultsShouldBeUpdated) {
         await page.screenshot({ path: `./results/${pageName}.png` });
     }
 
@@ -35,11 +21,13 @@ async function verify(page, pageName) {
     const metricsFilename = `./results/${pageName}.json`;
     const metrics = await gatherLighthouseMetrics(page, config);
 
-    if (updateResults) {
+    if (resultsShouldBeUpdated) {
         fs.writeFileSync(metricsFilename, JSON.stringify(metrics, null, 2));
     } else {
         historicalMetrics = JSON.parse(fs.readFileSync(metricsFilename))
     }
+
+    spinner.succeed();
 
     outputMetrics(metrics, historicalMetrics);
 }
@@ -56,7 +44,6 @@ async function gatherLighthouseMetrics(page, config) {
 }
 
 function outputMetrics(metrics, historicalMetrics) {
-    console.log(metrics.lhr.finalUrl);
     console.log('');
 
     outputPerformance(metrics);
@@ -98,3 +85,20 @@ function outputScore(score) {
         return ':| '
     }
 }
+
+(async () => {
+    const browser = await puppeteer.launch({ headless: true });
+    const page = await browser.newPage();
+
+    for (const site of demoSites.sites) {
+        const homeSpinner = ora(site).start();
+        await page.goto(site);
+        await checkPage(page, `${getSafeName(site)}_home`, homeSpinner);
+
+        const cfsSpinner = ora(`${site}cars-for-sale`).start();
+        await page.goto(`${site}cars-for-sale`);
+        await checkPage(page, `${getSafeName(site)}_inventory`, cfsSpinner);
+    }
+
+    await browser.close();
+})();
