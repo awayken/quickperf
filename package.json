@@ -2,7 +2,10 @@
   "name": "cfs.web.smartsites.performance",
   "version": "1.0.0",
   "description": "A project for helping measure the performance of our demo SmartSites.",
-  "main": "index.js",
+  "private": true,
+  "bin": {
+    "ssperf": "index.js"
+  },
   "scripts": {
     "start": "node ./index.js",
     "test": "jest"

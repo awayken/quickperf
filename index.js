@@ -1,3 +1,7 @@
+#!/usr/bin/env node
+
+'use strict';
+
 const puppeteer = require('puppeteer');
 const lighthouse = require('lighthouse');
 const ora = require('ora');
