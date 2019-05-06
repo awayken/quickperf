@@ -4,16 +4,18 @@
 
 const lighthouse = require('lighthouse');
 const puppeteer = require('puppeteer');
-const program = require('commander');
+const commander = require('commander');
 const ora = require('ora');
 const fs = require('fs');
 
 const demoSites = require('./demo-sites.json');
+const packageInfo = require('./package.json');
 const config = require('./custom-config.js');
 
-program
-    .version('1.0.0', '-v, --version')
-    .option('-u, --update', 'Update historical metrics')
+const program = new commander.Command('ssperf')
+    .version(packageInfo.version, '-v, --version')
+    .description(packageInfo.description)
+    .option('-u, --update', 'update historical metrics')
     .parse(process.argv);
 
 function getSafeName(input) {

@@ -4,10 +4,10 @@
     "environment": {
       "networkUserAgent": "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3694.0 Mobile Safari/537.36 Chrome-Lighthouse",
       "hostUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/75.0.3765.0 Safari/537.36",
-      "benchmarkIndex": 676
+      "benchmarkIndex": 608
     },
     "lighthouseVersion": "4.3.1",
-    "fetchTime": "2019-05-06T15:05:26.621Z",
+    "fetchTime": "2019-05-06T15:27:36.693Z",
     "requestedUrl": "https://www.cfs9.xyz/cars-for-sale",
     "finalUrl": "https://www.cfs9.xyz/cars-for-sale",
     "runWarnings": [],
@@ -16,37 +16,37 @@
         "id": "first-contentful-paint",
         "title": "First Contentful Paint",
         "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint).",
-        "score": 0.6,
+        "score": 0.58,
         "scoreDisplayMode": "numeric",
-        "rawValue": 3605.9163000000003,
-        "displayValue": "3.6 s"
+        "rawValue": 3681.8932000000004,
+        "displayValue": "3.7 s"
       },
       "first-meaningful-paint": {
         "id": "first-meaningful-paint",
         "title": "First Meaningful Paint",
         "description": "First Meaningful Paint measures when the primary content of a page is visible. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint).",
-        "score": 0.21,
+        "score": 0.2,
         "scoreDisplayMode": "numeric",
-        "rawValue": 5623.2603,
-        "displayValue": "5.6 s"
+        "rawValue": 5674.0055999999995,
+        "displayValue": "5.7 s"
       },
       "speed-index": {
         "id": "speed-index",
         "title": "Speed Index",
         "description": "Speed Index shows how quickly the contents of a page are visibly populated. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/speed-index).",
-        "score": 0.56,
+        "score": 0.72,
         "scoreDisplayMode": "numeric",
-        "rawValue": 5448.549417373653,
-        "displayValue": "5.4 s"
+        "rawValue": 4519.996557881311,
+        "displayValue": "4.5 s"
       },
       "estimated-input-latency": {
         "id": "estimated-input-latency",
         "title": "Estimated Input Latency",
         "description": "Estimated Input Latency is an estimate of how long your app takes to respond to user input, in milliseconds, during the busiest 5s window of page load. If your latency is higher than 50 ms, users may perceive your app as laggy. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/estimated-input-latency).",
-        "score": 0.55,
+        "score": 0.5,
         "scoreDisplayMode": "numeric",
-        "rawValue": 94.80000000000001,
-        "displayValue": "90 ms"
+        "rawValue": 99.68,
+        "displayValue": "100 ms"
       },
       "time-to-first-byte": {
         "id": "time-to-first-byte",
@@ -54,11 +54,11 @@
         "description": "Time To First Byte identifies the time at which your server sends a response. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/ttfb).",
         "score": 1,
         "scoreDisplayMode": "binary",
-        "rawValue": 178.172,
+        "rawValue": 181.091,
         "displayValue": "Root document took 180 ms",
         "details": {
           "type": "opportunity",
-          "overallSavingsMs": -421.828,
+          "overallSavingsMs": -418.909,
           "headings": [],
           "items": []
         }
@@ -67,10 +67,10 @@
         "id": "first-cpu-idle",
         "title": "First CPU Idle",
         "description": "First CPU Idle marks the first time at which the page's main thread is quiet enough to handle input. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/first-interactive).",
-        "score": 0.26,
+        "score": 0.25,
         "scoreDisplayMode": "numeric",
-        "rawValue": 8728.4123,
-        "displayValue": "8.7 s"
+        "rawValue": 8940.035600000001,
+        "displayValue": "8.9 s"
       }
     },
     "configSettings": {
@@ -145,7 +145,7 @@
           }
         ],
         "id": "performance",
-        "score": 0.48
+        "score": 0.53
       }
     },
     "categoryGroups": {
@@ -217,259 +217,259 @@
     "timing": {
       "entries": [
         {
-          "startTime": 77002.33,
+          "startTime": 79185.87,
           "name": "lh:init:config",
-          "duration": 11.85,
+          "duration": 13.23,
           "entryType": "measure"
         },
         {
-          "startTime": 77003.1,
+          "startTime": 79187.12,
           "name": "lh:config:requireGatherers",
-          "duration": 0.64,
+          "duration": 0.82,
           "entryType": "measure"
         },
         {
-          "startTime": 77003.74,
+          "startTime": 79187.96,
           "name": "lh:config:requireAudits",
-          "duration": 8.83,
+          "duration": 9.52,
           "entryType": "measure"
         },
         {
-          "startTime": 77014.2,
+          "startTime": 79199.12,
           "name": "lh:runner:run",
-          "duration": 3389.89,
+          "duration": 3526.13,
           "entryType": "measure"
         },
         {
-          "startTime": 77014.28,
+          "startTime": 79199.25,
           "name": "lh:init:connect",
-          "duration": 7.09,
+          "duration": 7.28,
           "entryType": "measure"
         },
         {
-          "startTime": 77021.38,
+          "startTime": 79206.54,
           "name": "lh:gather:getVersion",
-          "duration": 0.66,
+          "duration": 0.68,
           "entryType": "measure"
         },
         {
-          "startTime": 77022.08,
+          "startTime": 79207.24,
           "name": "lh:gather:loadBlank",
-          "duration": 121.95,
+          "duration": 122.3,
           "entryType": "measure"
         },
         {
-          "startTime": 77144.05,
+          "startTime": 79329.56,
           "name": "lh:gather:getBenchmarkIndex",
-          "duration": 504.86,
+          "duration": 505.18,
           "entryType": "measure"
         },
         {
-          "startTime": 77648.92,
+          "startTime": 79834.75,
           "name": "lh:gather:setupDriver",
-          "duration": 36.29,
+          "duration": 34.72,
           "entryType": "measure"
         },
         {
-          "startTime": 77686.37,
+          "startTime": 79870.17,
           "name": "lh:gather:beforePass",
-          "duration": 1.05,
+          "duration": 0.58,
           "entryType": "measure"
         },
         {
-          "startTime": 77687.43,
+          "startTime": 79870.76,
           "name": "lh:gather:loadPage-defaultPass",
-          "duration": 2339.98,
+          "duration": 2480.73,
           "entryType": "measure"
         },
         {
-          "startTime": 77724.97,
+          "startTime": 79904.84,
           "name": "lh:gather:getVersion",
-          "duration": 0.43,
+          "duration": 0.38,
           "entryType": "measure"
         },
         {
-          "startTime": 80027.44,
+          "startTime": 82351.5,
           "name": "lh:gather:pass",
-          "duration": 0.02,
+          "duration": 0.03,
           "entryType": "measure"
         },
         {
-          "startTime": 80028.62,
+          "startTime": 82352.8,
           "name": "lh:gather:getTrace",
-          "duration": 171.13,
+          "duration": 171.85,
           "entryType": "measure"
         },
         {
-          "startTime": 80199.77,
+          "startTime": 82524.66,
           "name": "lh:gather:getDevtoolsLog",
-          "duration": 3.05,
+          "duration": 3.33,
           "entryType": "measure"
         },
         {
-          "startTime": 80204.03,
+          "startTime": 82529.15,
           "name": "lh:gather:afterPass",
           "duration": 0.02,
           "entryType": "measure"
         },
         {
-          "startTime": 80228.5,
+          "startTime": 82557.01,
           "name": "lh:gather:disconnect",
-          "duration": 1.7,
+          "duration": 2.04,
           "entryType": "measure"
         },
         {
-          "startTime": 80230.26,
+          "startTime": 82559.11,
           "name": "lh:runner:auditing",
-          "duration": 173.72,
+          "duration": 166.09,
           "entryType": "measure"
         },
         {
-          "startTime": 80231.04,
+          "startTime": 82559.81,
           "name": "lh:audit:first-contentful-paint",
-          "duration": 36.44,
+          "duration": 31.09,
           "entryType": "measure"
         },
         {
-          "startTime": 80231.17,
+          "startTime": 82559.89,
           "name": "lh:computed:FirstContentfulPaint",
-          "duration": 35.5,
+          "duration": 30.49,
           "entryType": "measure"
         },
         {
-          "startTime": 80231.19,
+          "startTime": 82559.91,
           "name": "lh:computed:NetworkRecords",
-          "duration": 6.13,
+          "duration": 4.96,
           "entryType": "measure"
         },
         {
-          "startTime": 80237.34,
+          "startTime": 82564.9,
           "name": "lh:computed:TraceOfTab",
-          "duration": 24.53,
+          "duration": 17.68,
           "entryType": "measure"
         },
         {
-          "startTime": 80261.98,
+          "startTime": 82582.62,
           "name": "lh:computed:LanternFirstContentfulPaint",
-          "duration": 4.66,
+          "duration": 7.76,
           "entryType": "measure"
         },
         {
-          "startTime": 80262.07,
+          "startTime": 82582.64,
           "name": "lh:computed:PageDependencyGraph",
-          "duration": 1.95,
+          "duration": 6.5,
           "entryType": "measure"
         },
         {
-          "startTime": 80264.07,
+          "startTime": 82589.16,
           "name": "lh:computed:LoadSimulator",
-          "duration": 0.97,
+          "duration": 0.54,
           "entryType": "measure"
         },
         {
-          "startTime": 80264.11,
+          "startTime": 82589.17,
           "name": "lh:computed:NetworkAnalysis",
-          "duration": 0.88,
+          "duration": 0.5,
           "entryType": "measure"
         },
         {
-          "startTime": 80267.65,
+          "startTime": 82591.02,
           "name": "lh:audit:first-meaningful-paint",
-          "duration": 1.73,
+          "duration": 1.57,
           "entryType": "measure"
         },
         {
-          "startTime": 80267.69,
+          "startTime": 82591.05,
           "name": "lh:computed:FirstMeaningfulPaint",
-          "duration": 1.41,
+          "duration": 1.03,
           "entryType": "measure"
         },
         {
-          "startTime": 80267.73,
+          "startTime": 82591.07,
           "name": "lh:computed:LanternFirstMeaningfulPaint",
-          "duration": 1.36,
+          "duration": 1.01,
           "entryType": "measure"
         },
         {
-          "startTime": 80269.52,
+          "startTime": 82592.67,
           "name": "lh:audit:speed-index",
-          "duration": 124.64,
+          "duration": 127.73,
           "entryType": "measure"
         },
         {
-          "startTime": 80269.56,
+          "startTime": 82592.71,
           "name": "lh:computed:SpeedIndex",
-          "duration": 124.25,
+          "duration": 127.4,
           "entryType": "measure"
         },
         {
-          "startTime": 80269.58,
+          "startTime": 82592.73,
           "name": "lh:computed:LanternSpeedIndex",
-          "duration": 124.22,
+          "duration": 127.37,
           "entryType": "measure"
         },
         {
-          "startTime": 80269.61,
+          "startTime": 82592.73,
           "name": "lh:computed:Speedline",
-          "duration": 120.65,
+          "duration": 124.53,
           "entryType": "measure"
         },
         {
-          "startTime": 80394.3,
+          "startTime": 82720.51,
           "name": "lh:audit:estimated-input-latency",
-          "duration": 4.74,
+          "duration": 2.2,
           "entryType": "measure"
         },
         {
-          "startTime": 80394.33,
+          "startTime": 82720.54,
           "name": "lh:computed:EstimatedInputLatency",
-          "duration": 4.51,
+          "duration": 2.01,
           "entryType": "measure"
         },
         {
-          "startTime": 80394.35,
+          "startTime": 82720.56,
           "name": "lh:computed:LanternEstimatedInputLatency",
-          "duration": 4.48,
+          "duration": 1.98,
           "entryType": "measure"
         },
         {
-          "startTime": 80399.25,
+          "startTime": 82722.8,
           "name": "lh:audit:time-to-first-byte",
-          "duration": 0.36,
+          "duration": 0.21,
           "entryType": "measure"
         },
         {
-          "startTime": 80399.32,
+          "startTime": 82722.83,
           "name": "lh:computed:MainResource",
-          "duration": 0.09,
+          "duration": 0.05,
           "entryType": "measure"
         },
         {
-          "startTime": 80399.78,
+          "startTime": 82723.08,
           "name": "lh:audit:first-cpu-idle",
-          "duration": 4.19,
+          "duration": 2.11,
           "entryType": "measure"
         },
         {
-          "startTime": 80399.81,
+          "startTime": 82723.11,
           "name": "lh:computed:FirstCPUIdle",
-          "duration": 3.87,
+          "duration": 1.8,
           "entryType": "measure"
         },
         {
-          "startTime": 80399.85,
+          "startTime": 82723.13,
           "name": "lh:computed:LanternFirstCPUIdle",
-          "duration": 3.82,
+          "duration": 1.78,
           "entryType": "measure"
         },
         {
-          "startTime": 80403.99,
+          "startTime": 82725.2,
           "name": "lh:runner:generate",
-          "duration": 0.09,
+          "duration": 0.04,
           "entryType": "measure"
         }
       ],
-      "total": 3389.89
+      "total": 3526.13
     },
     "i18n": {
       "rendererFormattedStrings": {
@@ -503,25 +503,25 @@
         "lighthouse-core/lib/i18n/i18n.js | seconds": [
           {
             "values": {
-              "timeInMs": 3605.9163000000003
+              "timeInMs": 3681.8932000000004
             },
             "path": "audits[first-contentful-paint].displayValue"
           },
           {
             "values": {
-              "timeInMs": 5623.2603
+              "timeInMs": 5674.0055999999995
             },
             "path": "audits[first-meaningful-paint].displayValue"
           },
           {
             "values": {
-              "timeInMs": 5448.549417373653
+              "timeInMs": 4519.996557881311
             },
             "path": "audits[speed-index].displayValue"
           },
           {
             "values": {
-              "timeInMs": 8728.4123
+              "timeInMs": 8940.035600000001
             },
             "path": "audits[first-cpu-idle].displayValue"
           }
@@ -547,7 +547,7 @@
         "lighthouse-core/lib/i18n/i18n.js | ms": [
           {
             "values": {
-              "timeInMs": 94.80000000000001
+              "timeInMs": 99.68
             },
             "path": "audits[estimated-input-latency].displayValue"
           }
@@ -561,7 +561,7 @@
         "lighthouse-core/audits/time-to-first-byte.js | displayValue": [
           {
             "values": {
-              "timeInMs": 178.172
+              "timeInMs": 181.091
             },
             "path": "audits[time-to-first-byte].displayValue"
           }
@@ -650,5 +650,5 @@
       }
     }
   },
-  "report": "{\n  \"userAgent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/75.0.3765.0 Safari/537.36\",\n  \"environment\": {\n    \"networkUserAgent\": \"Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3694.0 Mobile Safari/537.36 Chrome-Lighthouse\",\n    \"hostUserAgent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/75.0.3765.0 Safari/537.36\",\n    \"benchmarkIndex\": 676\n  },\n  \"lighthouseVersion\": \"4.3.1\",\n  \"fetchTime\": \"2019-05-06T15:05:26.621Z\",\n  \"requestedUrl\": \"https://www.cfs9.xyz/cars-for-sale\",\n  \"finalUrl\": \"https://www.cfs9.xyz/cars-for-sale\",\n  \"runWarnings\": [],\n  \"audits\": {\n    \"first-contentful-paint\": {\n      \"id\": \"first-contentful-paint\",\n      \"title\": \"First Contentful Paint\",\n      \"description\": \"First Contentful Paint marks the time at which the first text or image is painted. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint).\",\n      \"score\": 0.6,\n      \"scoreDisplayMode\": \"numeric\",\n      \"rawValue\": 3605.9163000000003,\n      \"displayValue\": \"3.6 s\"\n    },\n    \"first-meaningful-paint\": {\n      \"id\": \"first-meaningful-paint\",\n      \"title\": \"First Meaningful Paint\",\n      \"description\": \"First Meaningful Paint measures when the primary content of a page is visible. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint).\",\n      \"score\": 0.21,\n      \"scoreDisplayMode\": \"numeric\",\n      \"rawValue\": 5623.2603,\n      \"displayValue\": \"5.6 s\"\n    },\n    \"speed-index\": {\n      \"id\": \"speed-index\",\n      \"title\": \"Speed Index\",\n      \"description\": \"Speed Index shows how quickly the contents of a page are visibly populated. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/speed-index).\",\n      \"score\": 0.56,\n      \"scoreDisplayMode\": \"numeric\",\n      \"rawValue\": 5448.549417373653,\n      \"displayValue\": \"5.4 s\"\n    },\n    \"estimated-input-latency\": {\n      \"id\": \"estimated-input-latency\",\n      \"title\": \"Estimated Input Latency\",\n      \"description\": \"Estimated Input Latency is an estimate of how long your app takes to respond to user input, in milliseconds, during the busiest 5s window of page load. If your latency is higher than 50 ms, users may perceive your app as laggy. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/estimated-input-latency).\",\n      \"score\": 0.55,\n      \"scoreDisplayMode\": \"numeric\",\n      \"rawValue\": 94.80000000000001,\n      \"displayValue\": \"90 ms\"\n    },\n    \"time-to-first-byte\": {\n      \"id\": \"time-to-first-byte\",\n      \"title\": \"Server response times are low (TTFB)\",\n      \"description\": \"Time To First Byte identifies the time at which your server sends a response. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/ttfb).\",\n      \"score\": 1,\n      \"scoreDisplayMode\": \"binary\",\n      \"rawValue\": 178.172,\n      \"displayValue\": \"Root document took 180 ms\",\n      \"details\": {\n        \"type\": \"opportunity\",\n        \"overallSavingsMs\": -421.828,\n        \"headings\": [],\n        \"items\": []\n      }\n    },\n    \"first-cpu-idle\": {\n      \"id\": \"first-cpu-idle\",\n      \"title\": \"First CPU Idle\",\n      \"description\": \"First CPU Idle marks the first time at which the page's main thread is quiet enough to handle input. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/first-interactive).\",\n      \"score\": 0.26,\n      \"scoreDisplayMode\": \"numeric\",\n      \"rawValue\": 8728.4123,\n      \"displayValue\": \"8.7 s\"\n    }\n  },\n  \"configSettings\": {\n    \"output\": \"json\",\n    \"maxWaitForFcp\": 15000,\n    \"maxWaitForLoad\": 45000,\n    \"throttlingMethod\": \"simulate\",\n    \"throttling\": {\n      \"rttMs\": 150,\n      \"throughputKbps\": 1638.4,\n      \"requestLatencyMs\": 562.5,\n      \"downloadThroughputKbps\": 1474.5600000000002,\n      \"uploadThroughputKbps\": 675,\n      \"cpuSlowdownMultiplier\": 4\n    },\n    \"auditMode\": false,\n    \"gatherMode\": false,\n    \"disableStorageReset\": false,\n    \"disableDeviceEmulation\": false,\n    \"emulatedFormFactor\": \"mobile\",\n    \"channel\": \"node\",\n    \"locale\": \"en-US\",\n    \"blockedUrlPatterns\": null,\n    \"additionalTraceCategories\": null,\n    \"extraHeaders\": null,\n    \"precomputedLanternData\": null,\n    \"onlyAudits\": [\n      \"first-contentful-paint\",\n      \"first-meaningful-paint\",\n      \"speed-index\",\n      \"first-cpu-idle\",\n      \"time-to-interactive\",\n      \"estimated-input-latency\",\n      \"time-to-first-byte\"\n    ],\n    \"onlyCategories\": null,\n    \"skipAudits\": null\n  },\n  \"categories\": {\n    \"performance\": {\n      \"title\": \"Performance\",\n      \"auditRefs\": [\n        {\n          \"id\": \"first-contentful-paint\",\n          \"weight\": 3,\n          \"group\": \"metrics\"\n        },\n        {\n          \"id\": \"first-meaningful-paint\",\n          \"weight\": 1,\n          \"group\": \"metrics\"\n        },\n        {\n          \"id\": \"speed-index\",\n          \"weight\": 4,\n          \"group\": \"metrics\"\n        },\n        {\n          \"id\": \"first-cpu-idle\",\n          \"weight\": 2,\n          \"group\": \"metrics\"\n        },\n        {\n          \"id\": \"estimated-input-latency\",\n          \"weight\": 0,\n          \"group\": \"metrics\"\n        },\n        {\n          \"id\": \"time-to-first-byte\",\n          \"weight\": 0,\n          \"group\": \"load-opportunities\"\n        }\n      ],\n      \"id\": \"performance\",\n      \"score\": 0.48\n    }\n  },\n  \"categoryGroups\": {\n    \"metrics\": {\n      \"title\": \"Metrics\"\n    },\n    \"load-opportunities\": {\n      \"title\": \"Opportunities\",\n      \"description\": \"These optimizations can speed up your page load.\"\n    },\n    \"diagnostics\": {\n      \"title\": \"Diagnostics\",\n      \"description\": \"More information about the performance of your application.\"\n    },\n    \"pwa-fast-reliable\": {\n      \"title\": \"Fast and reliable\"\n    },\n    \"pwa-installable\": {\n      \"title\": \"Installable\"\n    },\n    \"pwa-optimized\": {\n      \"title\": \"PWA Optimized\"\n    },\n    \"a11y-best-practices\": {\n      \"title\": \"Best practices\",\n      \"description\": \"These items highlight common accessibility best practices.\"\n    },\n    \"a11y-color-contrast\": {\n      \"title\": \"Contrast\",\n      \"description\": \"These are opportunities to improve the legibility of your content.\"\n    },\n    \"a11y-names-labels\": {\n      \"title\": \"Names and labels\",\n      \"description\": \"These are opportunities to improve the semantics of the controls in your application. This may enhance the experience for users of assistive technology, like a screen reader.\"\n    },\n    \"a11y-navigation\": {\n      \"title\": \"Navigation\",\n      \"description\": \"These are opportunities to improve keyboard navigation in your application.\"\n    },\n    \"a11y-aria\": {\n      \"title\": \"ARIA\",\n      \"description\": \"These are opportunities to improve the usage of ARIA in your application which may enhance the experience for users of assistive technology, like a screen reader.\"\n    },\n    \"a11y-language\": {\n      \"title\": \"Internationalization and localization\",\n      \"description\": \"These are opportunities to improve the interpretation of your content by users in different locales.\"\n    },\n    \"a11y-audio-video\": {\n      \"title\": \"Audio and video\",\n      \"description\": \"These are opportunities to provide alternative content for audio and video. This may improve the experience for users with hearing or vision impairments.\"\n    },\n    \"a11y-tables-lists\": {\n      \"title\": \"Tables and lists\",\n      \"description\": \"These are opportunities to to improve the experience of reading tabular or list data using assistive technology, like a screen reader.\"\n    },\n    \"seo-mobile\": {\n      \"title\": \"Mobile Friendly\",\n      \"description\": \"Make sure your pages are mobile friendly so users don’t have to pinch or zoom in order to read the content pages. [Learn more](https://developers.google.com/search/mobile-sites/).\"\n    },\n    \"seo-content\": {\n      \"title\": \"Content Best Practices\",\n      \"description\": \"Format your HTML in a way that enables crawlers to better understand your app’s content.\"\n    },\n    \"seo-crawl\": {\n      \"title\": \"Crawling and Indexing\",\n      \"description\": \"To appear in search results, crawlers need access to your app.\"\n    }\n  },\n  \"timing\": {\n    \"entries\": [\n      {\n        \"startTime\": 77002.33,\n        \"name\": \"lh:init:config\",\n        \"duration\": 11.85,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 77003.1,\n        \"name\": \"lh:config:requireGatherers\",\n        \"duration\": 0.64,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 77003.74,\n        \"name\": \"lh:config:requireAudits\",\n        \"duration\": 8.83,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 77014.2,\n        \"name\": \"lh:runner:run\",\n        \"duration\": 3389.89,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 77014.28,\n        \"name\": \"lh:init:connect\",\n        \"duration\": 7.09,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 77021.38,\n        \"name\": \"lh:gather:getVersion\",\n        \"duration\": 0.66,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 77022.08,\n        \"name\": \"lh:gather:loadBlank\",\n        \"duration\": 121.95,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 77144.05,\n        \"name\": \"lh:gather:getBenchmarkIndex\",\n        \"duration\": 504.86,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 77648.92,\n        \"name\": \"lh:gather:setupDriver\",\n        \"duration\": 36.29,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 77686.37,\n        \"name\": \"lh:gather:beforePass\",\n        \"duration\": 1.05,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 77687.43,\n        \"name\": \"lh:gather:loadPage-defaultPass\",\n        \"duration\": 2339.98,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 77724.97,\n        \"name\": \"lh:gather:getVersion\",\n        \"duration\": 0.43,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80027.44,\n        \"name\": \"lh:gather:pass\",\n        \"duration\": 0.02,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80028.62,\n        \"name\": \"lh:gather:getTrace\",\n        \"duration\": 171.13,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80199.77,\n        \"name\": \"lh:gather:getDevtoolsLog\",\n        \"duration\": 3.05,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80204.03,\n        \"name\": \"lh:gather:afterPass\",\n        \"duration\": 0.02,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80228.5,\n        \"name\": \"lh:gather:disconnect\",\n        \"duration\": 1.7,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80230.26,\n        \"name\": \"lh:runner:auditing\",\n        \"duration\": 173.72,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80231.04,\n        \"name\": \"lh:audit:first-contentful-paint\",\n        \"duration\": 36.44,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80231.17,\n        \"name\": \"lh:computed:FirstContentfulPaint\",\n        \"duration\": 35.5,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80231.19,\n        \"name\": \"lh:computed:NetworkRecords\",\n        \"duration\": 6.13,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80237.34,\n        \"name\": \"lh:computed:TraceOfTab\",\n        \"duration\": 24.53,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80261.98,\n        \"name\": \"lh:computed:LanternFirstContentfulPaint\",\n        \"duration\": 4.66,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80262.07,\n        \"name\": \"lh:computed:PageDependencyGraph\",\n        \"duration\": 1.95,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80264.07,\n        \"name\": \"lh:computed:LoadSimulator\",\n        \"duration\": 0.97,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80264.11,\n        \"name\": \"lh:computed:NetworkAnalysis\",\n        \"duration\": 0.88,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80267.65,\n        \"name\": \"lh:audit:first-meaningful-paint\",\n        \"duration\": 1.73,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80267.69,\n        \"name\": \"lh:computed:FirstMeaningfulPaint\",\n        \"duration\": 1.41,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80267.73,\n        \"name\": \"lh:computed:LanternFirstMeaningfulPaint\",\n        \"duration\": 1.36,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80269.52,\n        \"name\": \"lh:audit:speed-index\",\n        \"duration\": 124.64,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80269.56,\n        \"name\": \"lh:computed:SpeedIndex\",\n        \"duration\": 124.25,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80269.58,\n        \"name\": \"lh:computed:LanternSpeedIndex\",\n        \"duration\": 124.22,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80269.61,\n        \"name\": \"lh:computed:Speedline\",\n        \"duration\": 120.65,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80394.3,\n        \"name\": \"lh:audit:estimated-input-latency\",\n        \"duration\": 4.74,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80394.33,\n        \"name\": \"lh:computed:EstimatedInputLatency\",\n        \"duration\": 4.51,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80394.35,\n        \"name\": \"lh:computed:LanternEstimatedInputLatency\",\n        \"duration\": 4.48,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80399.25,\n        \"name\": \"lh:audit:time-to-first-byte\",\n        \"duration\": 0.36,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80399.32,\n        \"name\": \"lh:computed:MainResource\",\n        \"duration\": 0.09,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80399.78,\n        \"name\": \"lh:audit:first-cpu-idle\",\n        \"duration\": 4.19,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80399.81,\n        \"name\": \"lh:computed:FirstCPUIdle\",\n        \"duration\": 3.87,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80399.85,\n        \"name\": \"lh:computed:LanternFirstCPUIdle\",\n        \"duration\": 3.82,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 80403.99,\n        \"name\": \"lh:runner:generate\",\n        \"duration\": 0.09,\n        \"entryType\": \"measure\"\n      }\n    ],\n    \"total\": 3389.89\n  },\n  \"i18n\": {\n    \"rendererFormattedStrings\": {\n      \"auditGroupExpandTooltip\": \"Show audits\",\n      \"crcInitialNavigation\": \"Initial Navigation\",\n      \"crcLongestDurationLabel\": \"Maximum critical path latency:\",\n      \"errorLabel\": \"Error!\",\n      \"errorMissingAuditInfo\": \"Report error: no audit information\",\n      \"labDataTitle\": \"Lab Data\",\n      \"lsPerformanceCategoryDescription\": \"[Lighthouse](https://developers.google.com/web/tools/lighthouse/) analysis of the current page on an emulated mobile network. Values are estimated and may vary.\",\n      \"manualAuditsGroupTitle\": \"Additional items to manually check\",\n      \"notApplicableAuditsGroupTitle\": \"Not applicable\",\n      \"opportunityResourceColumnLabel\": \"Opportunity\",\n      \"opportunitySavingsColumnLabel\": \"Estimated Savings\",\n      \"passedAuditsGroupTitle\": \"Passed audits\",\n      \"scorescaleLabel\": \"Score scale:\",\n      \"snippetCollapseButtonLabel\": \"Collapse snippet\",\n      \"snippetExpandButtonLabel\": \"Expand snippet\",\n      \"toplevelWarningsMessage\": \"There were issues affecting this run of Lighthouse:\",\n      \"varianceDisclaimer\": \"Values are estimated and may vary.\",\n      \"warningAuditsGroupTitle\": \"Passed audits but with warnings\",\n      \"warningHeader\": \"Warnings: \"\n    },\n    \"icuMessagePaths\": {\n      \"lighthouse-core/audits/metrics/first-contentful-paint.js | title\": [\n        \"audits[first-contentful-paint].title\"\n      ],\n      \"lighthouse-core/audits/metrics/first-contentful-paint.js | description\": [\n        \"audits[first-contentful-paint].description\"\n      ],\n      \"lighthouse-core/lib/i18n/i18n.js | seconds\": [\n        {\n          \"values\": {\n            \"timeInMs\": 3605.9163000000003\n          },\n          \"path\": \"audits[first-contentful-paint].displayValue\"\n        },\n        {\n          \"values\": {\n            \"timeInMs\": 5623.2603\n          },\n          \"path\": \"audits[first-meaningful-paint].displayValue\"\n        },\n        {\n          \"values\": {\n            \"timeInMs\": 5448.549417373653\n          },\n          \"path\": \"audits[speed-index].displayValue\"\n        },\n        {\n          \"values\": {\n            \"timeInMs\": 8728.4123\n          },\n          \"path\": \"audits[first-cpu-idle].displayValue\"\n        }\n      ],\n      \"lighthouse-core/audits/metrics/first-meaningful-paint.js | title\": [\n        \"audits[first-meaningful-paint].title\"\n      ],\n      \"lighthouse-core/audits/metrics/first-meaningful-paint.js | description\": [\n        \"audits[first-meaningful-paint].description\"\n      ],\n      \"lighthouse-core/audits/metrics/speed-index.js | title\": [\n        \"audits[speed-index].title\"\n      ],\n      \"lighthouse-core/audits/metrics/speed-index.js | description\": [\n        \"audits[speed-index].description\"\n      ],\n      \"lighthouse-core/audits/metrics/estimated-input-latency.js | title\": [\n        \"audits[estimated-input-latency].title\"\n      ],\n      \"lighthouse-core/audits/metrics/estimated-input-latency.js | description\": [\n        \"audits[estimated-input-latency].description\"\n      ],\n      \"lighthouse-core/lib/i18n/i18n.js | ms\": [\n        {\n          \"values\": {\n            \"timeInMs\": 94.80000000000001\n          },\n          \"path\": \"audits[estimated-input-latency].displayValue\"\n        }\n      ],\n      \"lighthouse-core/audits/time-to-first-byte.js | title\": [\n        \"audits[time-to-first-byte].title\"\n      ],\n      \"lighthouse-core/audits/time-to-first-byte.js | description\": [\n        \"audits[time-to-first-byte].description\"\n      ],\n      \"lighthouse-core/audits/time-to-first-byte.js | displayValue\": [\n        {\n          \"values\": {\n            \"timeInMs\": 178.172\n          },\n          \"path\": \"audits[time-to-first-byte].displayValue\"\n        }\n      ],\n      \"lighthouse-core/audits/metrics/first-cpu-idle.js | title\": [\n        \"audits[first-cpu-idle].title\"\n      ],\n      \"lighthouse-core/audits/metrics/first-cpu-idle.js | description\": [\n        \"audits[first-cpu-idle].description\"\n      ],\n      \"lighthouse-core/config/default-config.js | performanceCategoryTitle\": [\n        \"categories.performance.title\"\n      ],\n      \"lighthouse-core/config/default-config.js | metricGroupTitle\": [\n        \"categoryGroups.metrics.title\"\n      ],\n      \"lighthouse-core/config/default-config.js | loadOpportunitiesGroupTitle\": [\n        \"categoryGroups[load-opportunities].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | loadOpportunitiesGroupDescription\": [\n        \"categoryGroups[load-opportunities].description\"\n      ],\n      \"lighthouse-core/config/default-config.js | diagnosticsGroupTitle\": [\n        \"categoryGroups.diagnostics.title\"\n      ],\n      \"lighthouse-core/config/default-config.js | diagnosticsGroupDescription\": [\n        \"categoryGroups.diagnostics.description\"\n      ],\n      \"lighthouse-core/config/default-config.js | pwaFastReliableGroupTitle\": [\n        \"categoryGroups[pwa-fast-reliable].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | pwaInstallableGroupTitle\": [\n        \"categoryGroups[pwa-installable].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | pwaOptimizedGroupTitle\": [\n        \"categoryGroups[pwa-optimized].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yBestPracticesGroupTitle\": [\n        \"categoryGroups[a11y-best-practices].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yBestPracticesGroupDescription\": [\n        \"categoryGroups[a11y-best-practices].description\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yColorContrastGroupTitle\": [\n        \"categoryGroups[a11y-color-contrast].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yColorContrastGroupDescription\": [\n        \"categoryGroups[a11y-color-contrast].description\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yNamesLabelsGroupTitle\": [\n        \"categoryGroups[a11y-names-labels].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yNamesLabelsGroupDescription\": [\n        \"categoryGroups[a11y-names-labels].description\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yNavigationGroupTitle\": [\n        \"categoryGroups[a11y-navigation].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yNavigationGroupDescription\": [\n        \"categoryGroups[a11y-navigation].description\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yAriaGroupTitle\": [\n        \"categoryGroups[a11y-aria].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yAriaGroupDescription\": [\n        \"categoryGroups[a11y-aria].description\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yLanguageGroupTitle\": [\n        \"categoryGroups[a11y-language].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yLanguageGroupDescription\": [\n        \"categoryGroups[a11y-language].description\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yAudioVideoGroupTitle\": [\n        \"categoryGroups[a11y-audio-video].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yAudioVideoGroupDescription\": [\n        \"categoryGroups[a11y-audio-video].description\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yTablesListsVideoGroupTitle\": [\n        \"categoryGroups[a11y-tables-lists].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yTablesListsVideoGroupDescription\": [\n        \"categoryGroups[a11y-tables-lists].description\"\n      ]\n    }\n  }\n}"
+  "report": "{\n  \"userAgent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/75.0.3765.0 Safari/537.36\",\n  \"environment\": {\n    \"networkUserAgent\": \"Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3694.0 Mobile Safari/537.36 Chrome-Lighthouse\",\n    \"hostUserAgent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/75.0.3765.0 Safari/537.36\",\n    \"benchmarkIndex\": 608\n  },\n  \"lighthouseVersion\": \"4.3.1\",\n  \"fetchTime\": \"2019-05-06T15:27:36.693Z\",\n  \"requestedUrl\": \"https://www.cfs9.xyz/cars-for-sale\",\n  \"finalUrl\": \"https://www.cfs9.xyz/cars-for-sale\",\n  \"runWarnings\": [],\n  \"audits\": {\n    \"first-contentful-paint\": {\n      \"id\": \"first-contentful-paint\",\n      \"title\": \"First Contentful Paint\",\n      \"description\": \"First Contentful Paint marks the time at which the first text or image is painted. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint).\",\n      \"score\": 0.58,\n      \"scoreDisplayMode\": \"numeric\",\n      \"rawValue\": 3681.8932000000004,\n      \"displayValue\": \"3.7 s\"\n    },\n    \"first-meaningful-paint\": {\n      \"id\": \"first-meaningful-paint\",\n      \"title\": \"First Meaningful Paint\",\n      \"description\": \"First Meaningful Paint measures when the primary content of a page is visible. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint).\",\n      \"score\": 0.2,\n      \"scoreDisplayMode\": \"numeric\",\n      \"rawValue\": 5674.0055999999995,\n      \"displayValue\": \"5.7 s\"\n    },\n    \"speed-index\": {\n      \"id\": \"speed-index\",\n      \"title\": \"Speed Index\",\n      \"description\": \"Speed Index shows how quickly the contents of a page are visibly populated. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/speed-index).\",\n      \"score\": 0.72,\n      \"scoreDisplayMode\": \"numeric\",\n      \"rawValue\": 4519.996557881311,\n      \"displayValue\": \"4.5 s\"\n    },\n    \"estimated-input-latency\": {\n      \"id\": \"estimated-input-latency\",\n      \"title\": \"Estimated Input Latency\",\n      \"description\": \"Estimated Input Latency is an estimate of how long your app takes to respond to user input, in milliseconds, during the busiest 5s window of page load. If your latency is higher than 50 ms, users may perceive your app as laggy. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/estimated-input-latency).\",\n      \"score\": 0.5,\n      \"scoreDisplayMode\": \"numeric\",\n      \"rawValue\": 99.68,\n      \"displayValue\": \"100 ms\"\n    },\n    \"time-to-first-byte\": {\n      \"id\": \"time-to-first-byte\",\n      \"title\": \"Server response times are low (TTFB)\",\n      \"description\": \"Time To First Byte identifies the time at which your server sends a response. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/ttfb).\",\n      \"score\": 1,\n      \"scoreDisplayMode\": \"binary\",\n      \"rawValue\": 181.091,\n      \"displayValue\": \"Root document took 180 ms\",\n      \"details\": {\n        \"type\": \"opportunity\",\n        \"overallSavingsMs\": -418.909,\n        \"headings\": [],\n        \"items\": []\n      }\n    },\n    \"first-cpu-idle\": {\n      \"id\": \"first-cpu-idle\",\n      \"title\": \"First CPU Idle\",\n      \"description\": \"First CPU Idle marks the first time at which the page's main thread is quiet enough to handle input. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/first-interactive).\",\n      \"score\": 0.25,\n      \"scoreDisplayMode\": \"numeric\",\n      \"rawValue\": 8940.035600000001,\n      \"displayValue\": \"8.9 s\"\n    }\n  },\n  \"configSettings\": {\n    \"output\": \"json\",\n    \"maxWaitForFcp\": 15000,\n    \"maxWaitForLoad\": 45000,\n    \"throttlingMethod\": \"simulate\",\n    \"throttling\": {\n      \"rttMs\": 150,\n      \"throughputKbps\": 1638.4,\n      \"requestLatencyMs\": 562.5,\n      \"downloadThroughputKbps\": 1474.5600000000002,\n      \"uploadThroughputKbps\": 675,\n      \"cpuSlowdownMultiplier\": 4\n    },\n    \"auditMode\": false,\n    \"gatherMode\": false,\n    \"disableStorageReset\": false,\n    \"disableDeviceEmulation\": false,\n    \"emulatedFormFactor\": \"mobile\",\n    \"channel\": \"node\",\n    \"locale\": \"en-US\",\n    \"blockedUrlPatterns\": null,\n    \"additionalTraceCategories\": null,\n    \"extraHeaders\": null,\n    \"precomputedLanternData\": null,\n    \"onlyAudits\": [\n      \"first-contentful-paint\",\n      \"first-meaningful-paint\",\n      \"speed-index\",\n      \"first-cpu-idle\",\n      \"time-to-interactive\",\n      \"estimated-input-latency\",\n      \"time-to-first-byte\"\n    ],\n    \"onlyCategories\": null,\n    \"skipAudits\": null\n  },\n  \"categories\": {\n    \"performance\": {\n      \"title\": \"Performance\",\n      \"auditRefs\": [\n        {\n          \"id\": \"first-contentful-paint\",\n          \"weight\": 3,\n          \"group\": \"metrics\"\n        },\n        {\n          \"id\": \"first-meaningful-paint\",\n          \"weight\": 1,\n          \"group\": \"metrics\"\n        },\n        {\n          \"id\": \"speed-index\",\n          \"weight\": 4,\n          \"group\": \"metrics\"\n        },\n        {\n          \"id\": \"first-cpu-idle\",\n          \"weight\": 2,\n          \"group\": \"metrics\"\n        },\n        {\n          \"id\": \"estimated-input-latency\",\n          \"weight\": 0,\n          \"group\": \"metrics\"\n        },\n        {\n          \"id\": \"time-to-first-byte\",\n          \"weight\": 0,\n          \"group\": \"load-opportunities\"\n        }\n      ],\n      \"id\": \"performance\",\n      \"score\": 0.53\n    }\n  },\n  \"categoryGroups\": {\n    \"metrics\": {\n      \"title\": \"Metrics\"\n    },\n    \"load-opportunities\": {\n      \"title\": \"Opportunities\",\n      \"description\": \"These optimizations can speed up your page load.\"\n    },\n    \"diagnostics\": {\n      \"title\": \"Diagnostics\",\n      \"description\": \"More information about the performance of your application.\"\n    },\n    \"pwa-fast-reliable\": {\n      \"title\": \"Fast and reliable\"\n    },\n    \"pwa-installable\": {\n      \"title\": \"Installable\"\n    },\n    \"pwa-optimized\": {\n      \"title\": \"PWA Optimized\"\n    },\n    \"a11y-best-practices\": {\n      \"title\": \"Best practices\",\n      \"description\": \"These items highlight common accessibility best practices.\"\n    },\n    \"a11y-color-contrast\": {\n      \"title\": \"Contrast\",\n      \"description\": \"These are opportunities to improve the legibility of your content.\"\n    },\n    \"a11y-names-labels\": {\n      \"title\": \"Names and labels\",\n      \"description\": \"These are opportunities to improve the semantics of the controls in your application. This may enhance the experience for users of assistive technology, like a screen reader.\"\n    },\n    \"a11y-navigation\": {\n      \"title\": \"Navigation\",\n      \"description\": \"These are opportunities to improve keyboard navigation in your application.\"\n    },\n    \"a11y-aria\": {\n      \"title\": \"ARIA\",\n      \"description\": \"These are opportunities to improve the usage of ARIA in your application which may enhance the experience for users of assistive technology, like a screen reader.\"\n    },\n    \"a11y-language\": {\n      \"title\": \"Internationalization and localization\",\n      \"description\": \"These are opportunities to improve the interpretation of your content by users in different locales.\"\n    },\n    \"a11y-audio-video\": {\n      \"title\": \"Audio and video\",\n      \"description\": \"These are opportunities to provide alternative content for audio and video. This may improve the experience for users with hearing or vision impairments.\"\n    },\n    \"a11y-tables-lists\": {\n      \"title\": \"Tables and lists\",\n      \"description\": \"These are opportunities to to improve the experience of reading tabular or list data using assistive technology, like a screen reader.\"\n    },\n    \"seo-mobile\": {\n      \"title\": \"Mobile Friendly\",\n      \"description\": \"Make sure your pages are mobile friendly so users don’t have to pinch or zoom in order to read the content pages. [Learn more](https://developers.google.com/search/mobile-sites/).\"\n    },\n    \"seo-content\": {\n      \"title\": \"Content Best Practices\",\n      \"description\": \"Format your HTML in a way that enables crawlers to better understand your app’s content.\"\n    },\n    \"seo-crawl\": {\n      \"title\": \"Crawling and Indexing\",\n      \"description\": \"To appear in search results, crawlers need access to your app.\"\n    }\n  },\n  \"timing\": {\n    \"entries\": [\n      {\n        \"startTime\": 79185.87,\n        \"name\": \"lh:init:config\",\n        \"duration\": 13.23,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 79187.12,\n        \"name\": \"lh:config:requireGatherers\",\n        \"duration\": 0.82,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 79187.96,\n        \"name\": \"lh:config:requireAudits\",\n        \"duration\": 9.52,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 79199.12,\n        \"name\": \"lh:runner:run\",\n        \"duration\": 3526.13,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 79199.25,\n        \"name\": \"lh:init:connect\",\n        \"duration\": 7.28,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 79206.54,\n        \"name\": \"lh:gather:getVersion\",\n        \"duration\": 0.68,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 79207.24,\n        \"name\": \"lh:gather:loadBlank\",\n        \"duration\": 122.3,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 79329.56,\n        \"name\": \"lh:gather:getBenchmarkIndex\",\n        \"duration\": 505.18,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 79834.75,\n        \"name\": \"lh:gather:setupDriver\",\n        \"duration\": 34.72,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 79870.17,\n        \"name\": \"lh:gather:beforePass\",\n        \"duration\": 0.58,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 79870.76,\n        \"name\": \"lh:gather:loadPage-defaultPass\",\n        \"duration\": 2480.73,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 79904.84,\n        \"name\": \"lh:gather:getVersion\",\n        \"duration\": 0.38,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82351.5,\n        \"name\": \"lh:gather:pass\",\n        \"duration\": 0.03,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82352.8,\n        \"name\": \"lh:gather:getTrace\",\n        \"duration\": 171.85,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82524.66,\n        \"name\": \"lh:gather:getDevtoolsLog\",\n        \"duration\": 3.33,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82529.15,\n        \"name\": \"lh:gather:afterPass\",\n        \"duration\": 0.02,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82557.01,\n        \"name\": \"lh:gather:disconnect\",\n        \"duration\": 2.04,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82559.11,\n        \"name\": \"lh:runner:auditing\",\n        \"duration\": 166.09,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82559.81,\n        \"name\": \"lh:audit:first-contentful-paint\",\n        \"duration\": 31.09,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82559.89,\n        \"name\": \"lh:computed:FirstContentfulPaint\",\n        \"duration\": 30.49,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82559.91,\n        \"name\": \"lh:computed:NetworkRecords\",\n        \"duration\": 4.96,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82564.9,\n        \"name\": \"lh:computed:TraceOfTab\",\n        \"duration\": 17.68,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82582.62,\n        \"name\": \"lh:computed:LanternFirstContentfulPaint\",\n        \"duration\": 7.76,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82582.64,\n        \"name\": \"lh:computed:PageDependencyGraph\",\n        \"duration\": 6.5,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82589.16,\n        \"name\": \"lh:computed:LoadSimulator\",\n        \"duration\": 0.54,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82589.17,\n        \"name\": \"lh:computed:NetworkAnalysis\",\n        \"duration\": 0.5,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82591.02,\n        \"name\": \"lh:audit:first-meaningful-paint\",\n        \"duration\": 1.57,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82591.05,\n        \"name\": \"lh:computed:FirstMeaningfulPaint\",\n        \"duration\": 1.03,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82591.07,\n        \"name\": \"lh:computed:LanternFirstMeaningfulPaint\",\n        \"duration\": 1.01,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82592.67,\n        \"name\": \"lh:audit:speed-index\",\n        \"duration\": 127.73,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82592.71,\n        \"name\": \"lh:computed:SpeedIndex\",\n        \"duration\": 127.4,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82592.73,\n        \"name\": \"lh:computed:LanternSpeedIndex\",\n        \"duration\": 127.37,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82592.73,\n        \"name\": \"lh:computed:Speedline\",\n        \"duration\": 124.53,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82720.51,\n        \"name\": \"lh:audit:estimated-input-latency\",\n        \"duration\": 2.2,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82720.54,\n        \"name\": \"lh:computed:EstimatedInputLatency\",\n        \"duration\": 2.01,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82720.56,\n        \"name\": \"lh:computed:LanternEstimatedInputLatency\",\n        \"duration\": 1.98,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82722.8,\n        \"name\": \"lh:audit:time-to-first-byte\",\n        \"duration\": 0.21,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82722.83,\n        \"name\": \"lh:computed:MainResource\",\n        \"duration\": 0.05,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82723.08,\n        \"name\": \"lh:audit:first-cpu-idle\",\n        \"duration\": 2.11,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82723.11,\n        \"name\": \"lh:computed:FirstCPUIdle\",\n        \"duration\": 1.8,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82723.13,\n        \"name\": \"lh:computed:LanternFirstCPUIdle\",\n        \"duration\": 1.78,\n        \"entryType\": \"measure\"\n      },\n      {\n        \"startTime\": 82725.2,\n        \"name\": \"lh:runner:generate\",\n        \"duration\": 0.04,\n        \"entryType\": \"measure\"\n      }\n    ],\n    \"total\": 3526.13\n  },\n  \"i18n\": {\n    \"rendererFormattedStrings\": {\n      \"auditGroupExpandTooltip\": \"Show audits\",\n      \"crcInitialNavigation\": \"Initial Navigation\",\n      \"crcLongestDurationLabel\": \"Maximum critical path latency:\",\n      \"errorLabel\": \"Error!\",\n      \"errorMissingAuditInfo\": \"Report error: no audit information\",\n      \"labDataTitle\": \"Lab Data\",\n      \"lsPerformanceCategoryDescription\": \"[Lighthouse](https://developers.google.com/web/tools/lighthouse/) analysis of the current page on an emulated mobile network. Values are estimated and may vary.\",\n      \"manualAuditsGroupTitle\": \"Additional items to manually check\",\n      \"notApplicableAuditsGroupTitle\": \"Not applicable\",\n      \"opportunityResourceColumnLabel\": \"Opportunity\",\n      \"opportunitySavingsColumnLabel\": \"Estimated Savings\",\n      \"passedAuditsGroupTitle\": \"Passed audits\",\n      \"scorescaleLabel\": \"Score scale:\",\n      \"snippetCollapseButtonLabel\": \"Collapse snippet\",\n      \"snippetExpandButtonLabel\": \"Expand snippet\",\n      \"toplevelWarningsMessage\": \"There were issues affecting this run of Lighthouse:\",\n      \"varianceDisclaimer\": \"Values are estimated and may vary.\",\n      \"warningAuditsGroupTitle\": \"Passed audits but with warnings\",\n      \"warningHeader\": \"Warnings: \"\n    },\n    \"icuMessagePaths\": {\n      \"lighthouse-core/audits/metrics/first-contentful-paint.js | title\": [\n        \"audits[first-contentful-paint].title\"\n      ],\n      \"lighthouse-core/audits/metrics/first-contentful-paint.js | description\": [\n        \"audits[first-contentful-paint].description\"\n      ],\n      \"lighthouse-core/lib/i18n/i18n.js | seconds\": [\n        {\n          \"values\": {\n            \"timeInMs\": 3681.8932000000004\n          },\n          \"path\": \"audits[first-contentful-paint].displayValue\"\n        },\n        {\n          \"values\": {\n            \"timeInMs\": 5674.0055999999995\n          },\n          \"path\": \"audits[first-meaningful-paint].displayValue\"\n        },\n        {\n          \"values\": {\n            \"timeInMs\": 4519.996557881311\n          },\n          \"path\": \"audits[speed-index].displayValue\"\n        },\n        {\n          \"values\": {\n            \"timeInMs\": 8940.035600000001\n          },\n          \"path\": \"audits[first-cpu-idle].displayValue\"\n        }\n      ],\n      \"lighthouse-core/audits/metrics/first-meaningful-paint.js | title\": [\n        \"audits[first-meaningful-paint].title\"\n      ],\n      \"lighthouse-core/audits/metrics/first-meaningful-paint.js | description\": [\n        \"audits[first-meaningful-paint].description\"\n      ],\n      \"lighthouse-core/audits/metrics/speed-index.js | title\": [\n        \"audits[speed-index].title\"\n      ],\n      \"lighthouse-core/audits/metrics/speed-index.js | description\": [\n        \"audits[speed-index].description\"\n      ],\n      \"lighthouse-core/audits/metrics/estimated-input-latency.js | title\": [\n        \"audits[estimated-input-latency].title\"\n      ],\n      \"lighthouse-core/audits/metrics/estimated-input-latency.js | description\": [\n        \"audits[estimated-input-latency].description\"\n      ],\n      \"lighthouse-core/lib/i18n/i18n.js | ms\": [\n        {\n          \"values\": {\n            \"timeInMs\": 99.68\n          },\n          \"path\": \"audits[estimated-input-latency].displayValue\"\n        }\n      ],\n      \"lighthouse-core/audits/time-to-first-byte.js | title\": [\n        \"audits[time-to-first-byte].title\"\n      ],\n      \"lighthouse-core/audits/time-to-first-byte.js | description\": [\n        \"audits[time-to-first-byte].description\"\n      ],\n      \"lighthouse-core/audits/time-to-first-byte.js | displayValue\": [\n        {\n          \"values\": {\n            \"timeInMs\": 181.091\n          },\n          \"path\": \"audits[time-to-first-byte].displayValue\"\n        }\n      ],\n      \"lighthouse-core/audits/metrics/first-cpu-idle.js | title\": [\n        \"audits[first-cpu-idle].title\"\n      ],\n      \"lighthouse-core/audits/metrics/first-cpu-idle.js | description\": [\n        \"audits[first-cpu-idle].description\"\n      ],\n      \"lighthouse-core/config/default-config.js | performanceCategoryTitle\": [\n        \"categories.performance.title\"\n      ],\n      \"lighthouse-core/config/default-config.js | metricGroupTitle\": [\n        \"categoryGroups.metrics.title\"\n      ],\n      \"lighthouse-core/config/default-config.js | loadOpportunitiesGroupTitle\": [\n        \"categoryGroups[load-opportunities].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | loadOpportunitiesGroupDescription\": [\n        \"categoryGroups[load-opportunities].description\"\n      ],\n      \"lighthouse-core/config/default-config.js | diagnosticsGroupTitle\": [\n        \"categoryGroups.diagnostics.title\"\n      ],\n      \"lighthouse-core/config/default-config.js | diagnosticsGroupDescription\": [\n        \"categoryGroups.diagnostics.description\"\n      ],\n      \"lighthouse-core/config/default-config.js | pwaFastReliableGroupTitle\": [\n        \"categoryGroups[pwa-fast-reliable].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | pwaInstallableGroupTitle\": [\n        \"categoryGroups[pwa-installable].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | pwaOptimizedGroupTitle\": [\n        \"categoryGroups[pwa-optimized].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yBestPracticesGroupTitle\": [\n        \"categoryGroups[a11y-best-practices].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yBestPracticesGroupDescription\": [\n        \"categoryGroups[a11y-best-practices].description\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yColorContrastGroupTitle\": [\n        \"categoryGroups[a11y-color-contrast].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yColorContrastGroupDescription\": [\n        \"categoryGroups[a11y-color-contrast].description\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yNamesLabelsGroupTitle\": [\n        \"categoryGroups[a11y-names-labels].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yNamesLabelsGroupDescription\": [\n        \"categoryGroups[a11y-names-labels].description\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yNavigationGroupTitle\": [\n        \"categoryGroups[a11y-navigation].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yNavigationGroupDescription\": [\n        \"categoryGroups[a11y-navigation].description\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yAriaGroupTitle\": [\n        \"categoryGroups[a11y-aria].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yAriaGroupDescription\": [\n        \"categoryGroups[a11y-aria].description\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yLanguageGroupTitle\": [\n        \"categoryGroups[a11y-language].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yLanguageGroupDescription\": [\n        \"categoryGroups[a11y-language].description\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yAudioVideoGroupTitle\": [\n        \"categoryGroups[a11y-audio-video].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yAudioVideoGroupDescription\": [\n        \"categoryGroups[a11y-audio-video].description\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yTablesListsVideoGroupTitle\": [\n        \"categoryGroups[a11y-tables-lists].title\"\n      ],\n      \"lighthouse-core/config/default-config.js | a11yTablesListsVideoGroupDescription\": [\n        \"categoryGroups[a11y-tables-lists].description\"\n      ]\n    }\n  }\n}"
 }
