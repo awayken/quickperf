@@ -34,13 +34,17 @@ async function gatherLighthouseMetrics(page, config) {
     Check the page
 */
 async function checkPage(page, pageName, spinner) {
-    if (program.update) {
-        await page.screenshot({ path: `./results/${pageName}.png` });
-    }
-
     let historicalMetrics;
-    const metricsFilename = `./results/${pageName}.json`;
+
+    const resultsDirectory = `${__dirname}/results`;
+    const screenshotFilename = `${resultsDirectory}/${pageName}.png`;
+    const metricsFilename = `${resultsDirectory}/${pageName}.json`;
+
     const metrics = await gatherLighthouseMetrics(page, config);
+
+    if (program.update) {
+        await page.screenshot({ path: screenshotFilename });
+    }
 
     if (program.update) {
         fs.writeFileSync(metricsFilename, JSON.stringify(metrics, null, 2));
