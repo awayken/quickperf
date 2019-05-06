@@ -49,7 +49,9 @@ async function checkPage(page, pageName, spinner) {
     if (program.update) {
         fs.writeFileSync(metricsFilename, JSON.stringify(metrics, null, 2));
     } else {
-        historicalMetrics = JSON.parse(fs.readFileSync(metricsFilename))
+        if (fs.existsSync(metricsFilename)) {
+            historicalMetrics = JSON.parse(fs.readFileSync(metricsFilename));
+        }
     }
 
     spinner.succeed();
