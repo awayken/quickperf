@@ -8,6 +8,7 @@ const commander = require('commander');
 const ora = require('ora');
 const fs = require('fs');
 
+const { getSafeName } = require('./string-helpers.js');
 const demoSites = require('./demo-sites.json');
 const packageInfo = require('./package.json');
 const config = require('./custom-config.js');
@@ -17,10 +18,6 @@ const program = new commander.Command('ssperf')
     .description(packageInfo.description)
     .option('-u, --update', 'update historical metrics')
     .parse(process.argv);
-
-function getSafeName(input) {
-    return input.split('www.')[1].replace(/[^\w]/g, '_');
-}
 
 async function checkPage(page, pageName, spinner) {
     if (program.update) {
