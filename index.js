@@ -2,22 +2,26 @@
 
 'use strict';
 
-const puppeteer = require('puppeteer');
 const lighthouse = require('lighthouse');
+const puppeteer = require('puppeteer');
+const program = require('commander');
 const ora = require('ora');
 const fs = require('fs');
 
 const demoSites = require('./demo-sites.json');
 const config = require('./custom-config.js');
 
-const resultsShouldBeUpdated = Boolean(process.argv[2]);
+program
+    .version('1.0.0', '-v, --version')
+    .option('-u, --update', 'Update historical metrics')
+    .parse(process.argv);
 
 function getSafeName(input) {
     return input.split('www.')[1].replace(/[^\w]/g, '_');
 }
 
 async function checkPage(page, pageName, spinner) {
-    if (resultsShouldBeUpdated) {
+    if (program.update) {
         await page.screenshot({ path: `./results/${pageName}.png` });
     }
 
@@ -25,7 +29,7 @@ async function checkPage(page, pageName, spinner) {
     const metricsFilename = `./results/${pageName}.json`;
     const metrics = await gatherLighthouseMetrics(page, config);
 
-    if (resultsShouldBeUpdated) {
+    if (program.update) {
         fs.writeFileSync(metricsFilename, JSON.stringify(metrics, null, 2));
     } else {
         historicalMetrics = JSON.parse(fs.readFileSync(metricsFilename))
