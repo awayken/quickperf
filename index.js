@@ -8,17 +8,31 @@ const commander = require('commander');
 const ora = require('ora');
 const fs = require('fs');
 
+const { outputMetrics } = require('./output-helpers.js');
 const { getSafeName } = require('./string-helpers.js');
 const demoSites = require('./demo-sites.json');
 const packageInfo = require('./package.json');
 const config = require('./custom-config.js');
 
-const program = new commander.Command('ssperf')
-    .version(packageInfo.version, '-v, --version')
-    .description(packageInfo.description)
-    .option('-u, --update', 'update historical metrics')
-    .parse(process.argv);
 
+/*
+    Gather Lighthouse Metrics
+*/
+async function gatherLighthouseMetrics(page, config) {
+    // Port is in formаt: ws://127.0.0.1:52046/devtools/browser/675a2fad-4ccf-412b-81bb-170fdb2cc39c
+    const port = await page.browser().wsEndpoint().split(':')[2].split('/')[0];
+
+    return await lighthouse(page.url(), { port: port }, config).then(results => {
+        delete results.artifacts;
+
+        return results;
+    });
+}
+
+
+/*
+    Check the page
+*/
 async function checkPage(page, pageName, spinner) {
     if (program.update) {
         await page.screenshot({ path: `./results/${pageName}.png` });
@@ -36,62 +50,18 @@ async function checkPage(page, pageName, spinner) {
 
     spinner.succeed();
 
-    outputMetrics(metrics, historicalMetrics);
+    outputMetrics(console.log, metrics, historicalMetrics);
 }
 
-async function gatherLighthouseMetrics(page, config) {
-    // Port is in formаt: ws://127.0.0.1:52046/devtools/browser/675a2fad-4ccf-412b-81bb-170fdb2cc39c
-    const port = await page.browser().wsEndpoint().split(':')[2].split('/')[0];
 
-    return await lighthouse(page.url(), { port: port }, config).then(results => {
-        delete results.artifacts;
-
-        return results;
-    });
-}
-
-function outputMetrics(metrics, historicalMetrics) {
-    console.log('');
-
-    outputPerformance(metrics);
-
-    let historicalSuffix;
-    if (historicalMetrics) {
-        historicalSuffix = ` (${historicalMetrics.lhr.fetchTime})`;
-        outputPerformance(historicalMetrics, historicalSuffix);
-    }
-
-    console.log('');
-
-    for (const auditKey of Object.keys(metrics.lhr.audits)) {
-        const audit = metrics.lhr.audits[auditKey];
-        const historicalAudit = historicalMetrics && historicalMetrics.lhr.audits[auditKey];
-
-        console.log(`${outputScore(audit.score)} ${audit.title}: ${audit.displayValue}`);
-        if (historicalAudit) {
-            console.log(`${outputScore(historicalAudit.score)} ${historicalAudit.title}: ${historicalAudit.displayValue}${historicalSuffix}`);
-        }
-    }
-
-    console.log('-'.repeat(80));
-    console.log('');
-}
-
-function outputPerformance(metrics, logSuffix = '') {
-    const performance = metrics.lhr.categories.performance;
-
-    console.log(`${outputScore(performance.score)} ${performance.title}: ${performance.score * 100}${logSuffix}`)
-}
-
-function outputScore(score) {
-    if (score >= .9) {
-        return ':) '
-    } else if (score <= .49) {
-        return ':( '
-    } else {
-        return ':| '
-    }
-}
+/*
+    Our main program
+*/
+const program = new commander.Command('ssperf')
+    .version(packageInfo.version, '-v, --version')
+    .description(packageInfo.description)
+    .option('-u, --update', 'update historical metrics')
+    .parse(process.argv);
 
 (async () => {
     const browser = await puppeteer.launch({ headless: true });
