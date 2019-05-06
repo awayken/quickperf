@@ -1,4 +1,12 @@
 function outputMetrics(outputter, metrics, historicalMetrics) {
+    if (!metrics || !metrics.lhr) {
+        throw new Error('Metrics is not a proper Lighthouse metrics report.');
+    }
+
+    if (historicalMetrics && !historicalMetrics.lhr) {
+        throw new Error('Historical Metrics is not a proper Lighthouse metrics report.');
+    }
+
     outputter('');
 
     outputPerformance(outputter, metrics);
