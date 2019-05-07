@@ -8,7 +8,8 @@
   },
   "scripts": {
     "start": "node ./index.js",
-    "test": "ava"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "author": "SmartSites Development Team",
   "license": "UNLICENSED",
@@ -19,6 +20,6 @@
     "puppeteer": "^1.15.0"
   },
   "devDependencies": {
-    "ava": "^1.4.1"
+    "jest": "^24.8.0"
   }
 }
