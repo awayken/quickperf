@@ -2,6 +2,7 @@
 
 'use strict';
 
+const { performance, PerformanceObserver } = require('perf_hooks');
 const lighthouse = require('lighthouse');
 const puppeteer = require('puppeteer');
 const commander = require('commander');
@@ -73,14 +74,31 @@ const program = new commander.Command('ssperf')
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
 
-    for (const site of demoSites.sites) {
+    const obs = new PerformanceObserver(list => {
+        // Get most recent entry
+        const entry = list.getEntries()[0];
+
+        // Log out the measurement
+        console.log(`Time to check ${entry.name}:`, `${entry.duration}ms`, '\n');
+    });
+
+    obs.observe({ entryTypes: ['measure'] });
+
+    for (const site of [demoSites.sites[0], demoSites.sites[1]]) {
+        performance.mark(`${site}-start`);
+
+        const siteSafeName = getSafeName(site);
+        
         const homeSpinner = ora(site).start();
         await page.goto(site);
-        await checkPage(page, `${getSafeName(site)}_home`, homeSpinner);
+        await checkPage(page, `${siteSafeName}_home`, homeSpinner);
 
         const cfsSpinner = ora(`${site}cars-for-sale`).start();
         await page.goto(`${site}cars-for-sale`);
-        await checkPage(page, `${getSafeName(site)}_inventory`, cfsSpinner);
+        await checkPage(page, `${siteSafeName}_inventory`, cfsSpinner);
+
+        performance.mark(`${site}-end`);
+        performance.measure(site, `${site}-start`, `${site}-end`);
     }
 
     await browser.close();
