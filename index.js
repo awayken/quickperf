@@ -84,7 +84,7 @@ const program = new commander.Command('ssperf')
 
     obs.observe({ entryTypes: ['measure'] });
 
-    for (const site of [demoSites.sites[0], demoSites.sites[1]]) {
+    for (const site of demoSites.sites) {
         performance.mark(`${site}-start`);
 
         const siteSafeName = getSafeName(site);
