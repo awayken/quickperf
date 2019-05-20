@@ -115,11 +115,15 @@ async function checkPage(page, pageName, spinner) {
         await checkPage(page, `${siteSafeName}_home`, homeSpinner);
 
         // Inventory Page
-        const cfsSpinner = ora(`${site}cars-for-sale`).start();
+        const inventorySpinner = ora(`${site}cars-for-sale`).start();
         await page.goto(`${site}cars-for-sale`);
-        await checkPage(page, `${siteSafeName}_inventory`, cfsSpinner);
+        await checkPage(page, `${siteSafeName}_inventory`, inventorySpinner);
 
         // Details page
+        const firstSearchResult = await page.$eval('a[href^="/details"]', item => item.getAttribute('href').slice(1));
+        const detailsSpinner = ora(`${site}${firstSearchResult}`).start();
+        await page.goto(`${site}${firstSearchResult}`);
+        await checkPage(page, `${siteSafeName}_details`, detailsSpinner);
 
         performance.mark(`${site}-end`);
         performance.measure(site, `${site}-start`, `${site}-end`);
