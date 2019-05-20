@@ -17,12 +17,24 @@ const config = require('./custom-config.js');
 
 
 /*
+    Define CLI options
+*/
+const program = new commander.Command('ssperf')
+    .version(packageInfo.version, '-v, --version')
+    .description(packageInfo.description)
+    .option('-o, --output <folder>', 'the directory to save latest perf reports')
+    .option('-c, --compare-to <folder>', 'the directory to compare perf reports against')
+    .parse(process.argv);
+
+
+/*
     Gather Lighthouse Metrics
 */
 async function gatherLighthouseMetrics(page, config) {
     // Port is in formаt: ws://127.0.0.1:52046/devtools/browser/675a2fad-4ccf-412b-81bb-170fdb2cc39c
     const port = await page.browser().wsEndpoint().split(':')[2].split('/')[0];
 
+    // Fetch Lighthouse data
     return await lighthouse(page.url(), { port: port }, config).then(results => {
         delete results.artifacts;
 
@@ -37,24 +49,36 @@ async function gatherLighthouseMetrics(page, config) {
 async function checkPage(page, pageName, spinner) {
     let historicalMetrics;
 
-    const resultsDirectory = `${__dirname}/results`;
+    // Variables for asset saving
+    const resultsDirectory = `${program.output || ''}`;
     const screenshotFilename = `${resultsDirectory}/${pageName}.png`;
     const metricsFilename = `${resultsDirectory}/${pageName}.json`;
+    const historicalFilename = `${program.compareTo}/${pageName}.json`;
 
+    // Gather Lighthouse Metrics
     const metrics = await gatherLighthouseMetrics(page, config);
 
-    if (program.update) {
-        await page.screenshot({ path: screenshotFilename });
-    }
+    if (program.output) {
+        // Create output folder if we need to
+        if (!fs.existsSync(resultsDirectory)) {
+            fs.mkdirSync(resultsDirectory, { recursive: true });
+        }
 
-    if (program.update) {
+        // Save screenshot
+        await page.screenshot({ path: screenshotFilename });
+
+        // Save metrics file
         fs.writeFileSync(metricsFilename, JSON.stringify(metrics, null, 2));
-    } else {
-        if (fs.existsSync(metricsFilename)) {
-            historicalMetrics = JSON.parse(fs.readFileSync(metricsFilename));
+    }
+    
+    // Get comparison metrics
+    if (program.compareTo) {
+        if (fs.existsSync(historicalFilename)) {
+            historicalMetrics = JSON.parse(fs.readFileSync(historicalFilename));
         }
     }
 
+    // Stop spinner
     spinner.succeed();
 
     outputMetrics(console.log, metrics, historicalMetrics);
@@ -64,16 +88,11 @@ async function checkPage(page, pageName, spinner) {
 /*
     Our main program
 */
-const program = new commander.Command('ssperf')
-    .version(packageInfo.version, '-v, --version')
-    .description(packageInfo.description)
-    .option('-u, --update', 'update historical metrics')
-    .parse(process.argv);
-
 (async () => {
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
 
+    // Setup performance observer
     const obs = new PerformanceObserver(list => {
         // Get most recent entry
         const entry = list.getEntries()[0];
@@ -84,18 +103,23 @@ const program = new commander.Command('ssperf')
 
     obs.observe({ entryTypes: ['measure'] });
 
-    for (const site of demoSites.sites) {
+    // Loop through our sites
+    for (const site of [demoSites.sites[0]]) {
         performance.mark(`${site}-start`);
 
         const siteSafeName = getSafeName(site);
         
+        // Home Page
         const homeSpinner = ora(site).start();
         await page.goto(site);
         await checkPage(page, `${siteSafeName}_home`, homeSpinner);
 
+        // Inventory Page
         const cfsSpinner = ora(`${site}cars-for-sale`).start();
         await page.goto(`${site}cars-for-sale`);
         await checkPage(page, `${siteSafeName}_inventory`, cfsSpinner);
+
+        // Details page
 
         performance.mark(`${site}-end`);
         performance.measure(site, `${site}-start`, `${site}-end`);
