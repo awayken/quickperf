@@ -104,7 +104,7 @@ async function checkPage(page, pageName, spinner) {
     obs.observe({ entryTypes: ['measure'] });
 
     // Loop through our sites
-    for (const site of [demoSites.sites[0]]) {
+    for (const site of demoSites.sites) {
         performance.mark(`${site}-start`);
 
         const siteSafeName = getSafeName(site);
