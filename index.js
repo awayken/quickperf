@@ -103,6 +103,11 @@ async function checkPage(page, pageName, spinner) {
 
     obs.observe({ entryTypes: ['measure'] });
 
+    await page.setViewport({
+        width: 1280,
+        height: 1024
+    });
+
     // Loop through our sites
     for (const site of demoSites.sites) {
         performance.mark(`${site}-start`);
