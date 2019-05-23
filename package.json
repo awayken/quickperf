@@ -1,6 +1,6 @@
 {
   "name": "cfs.web.smartsites.performance",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "A project for helping measure the performance of our demo SmartSites.",
   "private": true,
   "bin": {
