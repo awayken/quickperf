@@ -124,7 +124,7 @@ async function checkPage(page, pageName, spinner) {
             .catch(err => {
                 pageHasFailures = true;
                 homeSpinner.warn(err.message);
-            })
+            });
 
         // Inventory Page
         const inventorySpinner = ora(`${site}cars-for-sale`).start();
