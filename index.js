@@ -108,30 +108,59 @@ async function checkPage(page, pageName, spinner) {
         height: 1024
     });
 
+    let sitesWithFailures = 0;
+
     // Loop through our sites
     for (const site of demoSites.sites) {
         performance.mark(`${site}-start`);
 
+        let pageHasFailures = false;
         const siteSafeName = getSafeName(site);
         
         // Home Page
         const homeSpinner = ora(site).start();
-        await page.goto(site);
-        await checkPage(page, `${siteSafeName}_home`, homeSpinner);
+        await page.goto(site)
+            .then(() => checkPage(page, `${siteSafeName}_home`, homeSpinner))
+            .catch(err => {
+                pageHasFailures = true;
+                homeSpinner.warn(err.message);
+            })
 
         // Inventory Page
         const inventorySpinner = ora(`${site}cars-for-sale`).start();
-        await page.goto(`${site}cars-for-sale`);
-        await checkPage(page, `${siteSafeName}_inventory`, inventorySpinner);
+        await page.goto(`${site}cars-for-sale`)
+            .then(() => checkPage(page, `${siteSafeName}_inventory`, inventorySpinner))
+            .then(async () => {
+                // Details page
+                const firstSearchResult = await page.$eval('a[href^="/details"]', item => item.getAttribute('href').slice(1));
 
-        // Details page
-        const firstSearchResult = await page.$eval('a[href^="/details"]', item => item.getAttribute('href').slice(1));
-        const detailsSpinner = ora(`${site}${firstSearchResult}`).start();
-        await page.goto(`${site}${firstSearchResult}`);
-        await checkPage(page, `${siteSafeName}_details`, detailsSpinner);
+                const detailsSpinner = ora(`${site}${firstSearchResult}`).start();
+                await page.goto(`${site}${firstSearchResult}`)
+                    .then(() => checkPage(page, `${siteSafeName}_details`, detailsSpinner))
+                    .catch(err => {
+                        pageHasFailures = true;
+                        detailsSpinner.warn(err.message);
+                    });
+            })
+            .catch(err => {
+                pageHasFailures = true;
+                inventorySpinner.warn(err.message);
+            });
 
         performance.mark(`${site}-end`);
         performance.measure(site, `${site}-start`, `${site}-end`);
+
+        if (pageHasFailures) {
+            sitesWithFailures++;
+        }
+
+        if (sitesWithFailures > 3) {
+            break;
+        }
+    }
+
+    if (sitesWithFailures > 3) {
+        console.warn('Too many sites gave response errors. Check your network settings and try again.');
     }
 
     await browser.close();
