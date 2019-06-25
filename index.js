@@ -9,6 +9,7 @@ const commander = require('commander');
 const ora = require('ora');
 const fs = require('fs');
 
+const { getSitesToMeasure } = require('./site-helpers.js');
 const { outputMetrics } = require('./output-helpers.js');
 const { getSafeName } = require('./string-helpers.js');
 const packageInfo = require('./package.json');
@@ -22,25 +23,10 @@ const program = new commander.Command('quickperf')
     .version(packageInfo.version, '-v, --version')
     .description(packageInfo.description)
     .arguments('[siteurls]')
+    .option('-s, --sites <sites.json>', 'the JSON file that defines which URLs to measure')
     .option('-o, --output <folder>', 'the directory to save latest perf reports')
     .option('-c, --compare-to <folder>', 'the directory to compare perf reports against')
     .parse(process.argv);
-
-
-/*
-    Get Sites to Measure
-*/
-function getSitesToMeasure() {
-    // Put siteurls arguments into proper format
-    const sites = program.args.map(arg => {
-        return {
-            name: arg,
-            urls: [ arg ]
-        }
-    });
-
-    return sites;
-}
 
 
 /*
@@ -124,7 +110,7 @@ async function checkPage(page, pageName, spinner) {
         height: 1024
     });
 
-    const sitesToMeasure = getSitesToMeasure();
+    const sitesToMeasure = getSitesToMeasure(program.args, program.sites);
     let sitesWithFailures = 0;
 
     if (!sitesToMeasure.length) {
@@ -137,7 +123,8 @@ async function checkPage(page, pageName, spinner) {
     for (const site of sitesToMeasure) {
         let pageHasFailures = false;
         
-        if (!site.name || !site.urls) {
+        // Require a certain structure for our site
+        if (!site || !site.name || !site.urls) {
             pageHasFailures = true;
         }
         
@@ -146,6 +133,7 @@ async function checkPage(page, pageName, spinner) {
             
             performance.mark(`${siteSafeName}-start`);
             
+            // Loop through every URL for this site
             for (let i = 0, len = site.urls.length; i < len; i++) {
                 const url = site.urls[i];
                 const spinner = ora(url).start();
@@ -167,12 +155,9 @@ async function checkPage(page, pageName, spinner) {
         }
 
         if (sitesWithFailures > 3) {
+            console.error('!! Too many sites gave response errors. Check your network settings and try again.', '\n');
             break;
         }
-    }
-
-    if (sitesWithFailures > 3) {
-        console.error('!! Too many sites gave response errors. Check your network settings and try again.', '\n');
     }
 
     await browser.close();

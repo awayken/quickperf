@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cleanURLs 1`] = `
+Array [
+  Object {
+    "name": "cwtest086",
+    "urls": Array [
+      "https://www.cwtest086.site/",
+      "https://www.cwtest086.site/cars-for-sale",
+      "https://www.cwtest086.site/details/used-2007-chevrolet-colorado/47659032",
+    ],
+  },
+  Object {
+    "name": "cfs-test3",
+    "urls": Array [
+      "https://www.cfs-test3.life/",
+      "https://www.cfs-test3.life/cars-for-sale",
+      "https://www.cfs-test3.life/details/used-2010-mazda-cx-9/47384839",
+    ],
+  },
+]
+`;
+
+exports[`convertURLs 1`] = `
+Array [
+  Object {
+    "name": "https://www.cwtest086.site/",
+    "urls": Array [
+      "https://www.cwtest086.site/",
+    ],
+  },
+  Object {
+    "name": "https://www.cwtest086.site/cars-for-sale",
+    "urls": Array [
+      "https://www.cwtest086.site/cars-for-sale",
+    ],
+  },
+  Object {
+    "name": "https://www.cwtest086.site/details/used-2015-dodge-challenger/47659034",
+    "urls": Array [
+      "https://www.cwtest086.site/details/used-2015-dodge-challenger/47659034",
+    ],
+  },
+]
+`;
+
+exports[`fetchSites 1`] = `
+Array [
+  Object {
+    "name": "cwtest086",
+    "urls": Array [
+      "https://www.cwtest086.site/",
+      "https://www.cwtest086.site/cars-for-sale",
+      "https://www.cwtest086.site/details/used-2007-chevrolet-colorado/47659032",
+    ],
+  },
+]
+`;
+
+exports[`getSitesToMeasure 1`] = `
+Array [
+  Object {
+    "name": "https://www.cwtest086.site/",
+    "urls": Array [
+      "https://www.cwtest086.site/",
+    ],
+  },
+  Object {
+    "name": "https://www.cwtest086.site/cars-for-sale",
+    "urls": Array [
+      "https://www.cwtest086.site/cars-for-sale",
+    ],
+  },
+  Object {
+    "name": "https://www.cwtest086.site/details/used-2015-dodge-challenger/47659034",
+    "urls": Array [
+      "https://www.cwtest086.site/details/used-2015-dodge-challenger/47659034",
+    ],
+  },
+]
+`;
+
+exports[`getSitesToMeasure 2`] = `
+Array [
+  Object {
+    "name": "cwtest086",
+    "urls": Array [
+      "https://www.cwtest086.site/",
+      "https://www.cwtest086.site/cars-for-sale",
+      "https://www.cwtest086.site/details/used-2007-chevrolet-colorado/47659032",
+    ],
+  },
+]
+`;
+
+exports[`getSitesToMeasure 3`] = `
+Array [
+  Object {
+    "name": "https://www.cwtest086.site/",
+    "urls": Array [
+      "https://www.cwtest086.site/",
+    ],
+  },
+  Object {
+    "name": "https://www.cwtest086.site/cars-for-sale",
+    "urls": Array [
+      "https://www.cwtest086.site/cars-for-sale",
+    ],
+  },
+  Object {
+    "name": "https://www.cwtest086.site/details/used-2015-dodge-challenger/47659034",
+    "urls": Array [
+      "https://www.cwtest086.site/details/used-2015-dodge-challenger/47659034",
+    ],
+  },
+  Object {
+    "name": "cwtest086",
+    "urls": Array [
+      "https://www.cwtest086.site/",
+      "https://www.cwtest086.site/cars-for-sale",
+      "https://www.cwtest086.site/details/used-2007-chevrolet-colorado/47659032",
+    ],
+  },
+]
+`;

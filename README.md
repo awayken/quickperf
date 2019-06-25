@@ -58,6 +58,27 @@ A space-separated list of URLs to measure.
 
 ## Options
 
+### Sites (`-s`, `--sites`)
+
+A JSON file that defines which URLs to measure. The file should be in the following format:
+
+```json
+{
+    "sites": [
+        {
+            "name": "cwtest086",
+            "urls": [
+                "https://www.cwtest086.site/",
+                "https://www.cwtest086.site/cars-for-sale",
+                "https://www.cwtest086.site/details/used-2007-chevrolet-colorado/47659032"
+            ]
+        }
+    ]
+}
+```
+
+Each site has a "name" which is used for creating output files and for comparisons. The "urls" array tells the tool which URLs to actual track performance on.
+
 ### Output (`-o`, `--output`)
 
 The directory to save reports to. Reports are saved in the Lighthouse report format in JSON. Screenshots are taken for possible visual regression testing (not included).
