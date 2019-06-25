@@ -5,6 +5,15 @@
 This tool gets its performance data from Lighthouse and uses Puppeteer to take screenshots.
 
 
+## Installation
+
+This project is not published as an npm module. To install it, follow these instructions:
+
+  1. Clone or download the code
+  1. Run `npm install` to install dependencies
+  1. Run `npm link` to make `quickperf` globally available
+
+
 ## Usage
 
 ```sh
