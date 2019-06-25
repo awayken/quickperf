@@ -2,7 +2,7 @@
 
   > A project for helping measure the performance of your sites.
 
-This tool gets its performance data from Lighthouse and uses Puppeteer to take screenshots.
+This tool gets its performance data from Lighthouse via Puppeteer.
 
 
 ## Installation
@@ -81,7 +81,7 @@ Each site has a "name" which is used for creating output files and for compariso
 
 ### Output (`-o`, `--output`)
 
-The directory to save reports to. Reports are saved in the Lighthouse report format in JSON. Screenshots are taken for possible visual regression testing (not included).
+The directory to save reports to. Reports are saved in the Lighthouse report format in JSON.
 
 ### Compare To (`-c`, `--compare-to`)
 

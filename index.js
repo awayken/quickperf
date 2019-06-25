@@ -53,7 +53,6 @@ async function checkPage(page, pageName, spinner) {
 
     // Variables for asset saving
     const resultsDirectory = `${program.output || ''}`;
-    const screenshotFilename = `${resultsDirectory}/${pageName}.png`;
     const metricsFilename = `${resultsDirectory}/${pageName}.json`;
     const historicalFilename = `${program.compareTo}/${pageName}.json`;
 
@@ -65,9 +64,6 @@ async function checkPage(page, pageName, spinner) {
         if (!fs.existsSync(resultsDirectory)) {
             fs.mkdirSync(resultsDirectory, { recursive: true });
         }
-
-        // Save screenshot
-        await page.screenshot({ path: screenshotFilename });
 
         // Save metrics file
         fs.writeFileSync(metricsFilename, JSON.stringify(metrics, null, 2));
