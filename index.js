@@ -11,7 +11,6 @@ const fs = require('fs');
 
 const { outputMetrics } = require('./output-helpers.js');
 const { getSafeName } = require('./string-helpers.js');
-const demoSites = require('./demo-sites.json');
 const packageInfo = require('./package.json');
 const config = require('./custom-config.js');
 
@@ -19,12 +18,29 @@ const config = require('./custom-config.js');
 /*
     Define CLI options
 */
-const program = new commander.Command('ssperf')
+const program = new commander.Command('quickperf')
     .version(packageInfo.version, '-v, --version')
     .description(packageInfo.description)
+    .arguments('[siteurls]')
     .option('-o, --output <folder>', 'the directory to save latest perf reports')
     .option('-c, --compare-to <folder>', 'the directory to compare perf reports against')
     .parse(process.argv);
+
+
+/*
+    Get Sites to Measure
+*/
+function getSitesToMeasure() {
+    // Put siteurls arguments into proper format
+    const sites = program.args.map(arg => {
+        return {
+            name: arg,
+            urls: [ arg ]
+        }
+    });
+
+    return sites;
+}
 
 
 /*
@@ -108,47 +124,43 @@ async function checkPage(page, pageName, spinner) {
         height: 1024
     });
 
+    const sitesToMeasure = getSitesToMeasure();
     let sitesWithFailures = 0;
 
-    // Loop through our sites
-    for (const site of demoSites.sites) {
-        performance.mark(`${site}-start`);
+    if (!sitesToMeasure.length) {
+        console.error('!! You did not provide any sites to measure.', '\n');
 
+        program.outputHelp();
+    }
+
+    // Loop through our sites to measure
+    for (const site of sitesToMeasure) {
         let pageHasFailures = false;
-        const siteSafeName = getSafeName(site);
         
-        // Home Page
-        const homeSpinner = ora(site).start();
-        await page.goto(site)
-            .then(() => checkPage(page, `${siteSafeName}_home`, homeSpinner))
-            .catch(err => {
-                pageHasFailures = true;
-                homeSpinner.warn(err.message);
-            });
+        if (!site.name || !site.urls) {
+            pageHasFailures = true;
+        }
+        
+        if (!pageHasFailures) {
+            const siteSafeName = getSafeName(site.name);
+            
+            performance.mark(`${siteSafeName}-start`);
+            
+            for (let i = 0, len = site.urls.length; i < len; i++) {
+                const url = site.urls[i];
+                const spinner = ora(url).start();
 
-        // Inventory Page
-        const inventorySpinner = ora(`${site}cars-for-sale`).start();
-        await page.goto(`${site}cars-for-sale`)
-            .then(() => checkPage(page, `${siteSafeName}_inventory`, inventorySpinner))
-            .then(async () => {
-                // Details page
-                const firstSearchResult = await page.$eval('a[href^="/details"]', item => item.getAttribute('href').slice(1));
-
-                const detailsSpinner = ora(`${site}${firstSearchResult}`).start();
-                await page.goto(`${site}${firstSearchResult}`)
-                    .then(() => checkPage(page, `${siteSafeName}_details`, detailsSpinner))
+                await page.goto(url)
+                    .then(() => checkPage(page, `${siteSafeName}_${i}`, spinner))
                     .catch(err => {
                         pageHasFailures = true;
-                        detailsSpinner.warn(err.message);
+                        spinner.warn(err.message);
                     });
-            })
-            .catch(err => {
-                pageHasFailures = true;
-                inventorySpinner.warn(err.message);
-            });
+            }
 
-        performance.mark(`${site}-end`);
-        performance.measure(site, `${site}-start`, `${site}-end`);
+            performance.mark(`${siteSafeName}-end`);
+            performance.measure(siteSafeName, `${siteSafeName}-start`, `${siteSafeName}-end`);
+        }
 
         if (pageHasFailures) {
             sitesWithFailures++;
@@ -160,7 +172,7 @@ async function checkPage(page, pageName, spinner) {
     }
 
     if (sitesWithFailures > 3) {
-        console.warn('Too many sites gave response errors. Check your network settings and try again.');
+        console.error('!! Too many sites gave response errors. Check your network settings and try again.', '\n');
     }
 
     await browser.close();

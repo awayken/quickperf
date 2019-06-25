@@ -1,18 +1,18 @@
 {
-  "name": "cfs.web.smartsites.performance",
-  "version": "2.2.1",
-  "description": "A project for helping measure the performance of our demo SmartSites.",
+  "name": "quickperf",
+  "version": "3.0.0",
+  "description": "A project for helping measure the performance of your sites.",
   "private": true,
   "bin": {
-    "ssperf": "index.js"
+    "quickperf": "index.js"
   },
   "scripts": {
     "start": "node ./index.js",
     "test": "jest",
     "test:watch": "jest --watch"
   },
-  "author": "SmartSites Development Team",
-  "license": "UNLICENSED",
+  "author": "Miles Rausch",
+  "license": "MIT",
   "dependencies": {
     "commander": "^2.20.0",
     "lighthouse": "^4.3.1",
