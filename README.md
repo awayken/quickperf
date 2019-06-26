@@ -1,6 +1,6 @@
 # quickperf
 
-  > A project for helping measure the performance of your sites.
+  > A project to help measure the performance of your sites.
 
 This tool gets its performance data from Lighthouse via Puppeteer.
 
