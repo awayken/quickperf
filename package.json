@@ -1,7 +1,7 @@
 {
   "name": "quickperf",
   "version": "3.0.0",
-  "description": "A project for helping measure the performance of your sites.",
+  "description": "A project to help measure the performance of your sites.",
   "private": true,
   "bin": {
     "quickperf": "index.js"
