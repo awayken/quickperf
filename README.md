@@ -13,6 +13,8 @@ This project is not published as an npm module. To install it, follow these inst
   1. Run `npm install` to install dependencies
   1. Run `npm link` to make `quickperf` globally available
 
+Issues running the project? See **Troubleshooting** below.
+
 
 ## Usage
 
@@ -96,3 +98,17 @@ Output the version number.
 ### Help (`-h`, `--help`)
 
 Output usage information.
+
+
+## Troubleshooting
+
+Below are some common error messages that users have gotten when trying to use `quickperf`.
+
+<details>
+<summary>Error: Chromium revision is not downloaded. Run "npm install" or "yarn install"</summary>
+
+In some cases, a normal `npm install` may not cause all the appropriate modules to download. If you run into this error, 
+you may have to install some dependencies manually.
+
+Run `npm install puppeteer` to fix this issue.
+</details>
